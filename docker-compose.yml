@@ -1,13 +1,13 @@
-version: '3'
+version: '2'
 services:
   db:
     image: postgres
   web:
     build: .
-    command: bin/rails s -p 3000 -b '0.0.0.0'
+    command: ["./wait-for-postgres.sh", "db", "rake db:create", "rake db:migrate", "bin/rails s -b '0.0.0.0'"]
     volumes:
       - .:/myapp
     ports:
-      - "3000:3000"
+      - "80:3000"
     depends_on:
       - db
