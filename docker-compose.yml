@@ -7,6 +7,7 @@ services:
     command: bash -c "sleep 10 && rake db:create && rake db:migrate && sleep 5 && rm -rf /myapp/tmp/pids/server.pid && bin/rails s -b '0.0.0.0'"
     ports:
       - "3000:3000"
+    network_mode: "bridge"
     environment:
       - "VIRTUAL_HOST=docker-changes.dev.com"
     depends_on:
