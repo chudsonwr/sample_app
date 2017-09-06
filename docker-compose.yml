@@ -1,6 +1,6 @@
 version: '2'
 services:
-  db1:
+  db:
     image: postgres
   web:
     build: .
@@ -10,7 +10,7 @@ services:
     environment:
       - "VIRTUAL_HOST=nginx_test.dev.com"
     depends_on:
-      - db1
+      - db
 networks:
   default:
     external:
