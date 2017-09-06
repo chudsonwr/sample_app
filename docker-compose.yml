@@ -8,11 +8,13 @@ services:
     ports:
       - "3000:3000"
     network_mode: "bridge"
+    networks:
+      - nginx-proxy
     environment:
       - "VIRTUAL_HOST=docker-changes.dev.com"
     depends_on:
       - db
-    networks:
-      nginx-proxy:
+networks:
+    nginx-proxy:
         external:
-          name: nginxproxy_default
+            name: nginx-proxy
