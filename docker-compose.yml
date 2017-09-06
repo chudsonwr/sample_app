@@ -16,4 +16,3 @@ services:
       - db
 networks:
     nginx-proxy:
-        name: nginx-proxy
