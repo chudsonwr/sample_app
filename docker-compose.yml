@@ -16,5 +16,4 @@ services:
       - db
 networks:
     nginx-proxy:
-        external:
-            name: nginx-proxy
+        name: nginx-proxy
