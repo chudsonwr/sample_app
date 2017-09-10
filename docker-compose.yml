@@ -11,7 +11,3 @@ services:
       - "VIRTUAL_HOST=master.dev.com"
     depends_on:
       - db
-networks:
-  default:
-    external:
-      name: nginx-proxy
